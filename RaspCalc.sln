@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31611.283
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RaspCalc", "RaspCalc.csproj", "{20A0A245-0782-478E-A26F-47E7FEA442DF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RaspCalc", "RaspCalc\RaspCalc.csproj", "{20A0A245-0782-478E-A26F-47E7FEA442DF}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RaspCalc.Tests", "..\MathTests\RaspCalc.Tests.csproj", "{032387F4-EEC9-455B-B4DF-865943130D86}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RaspCalc.Tests", "RaspCalc.Tests\RaspCalc.Tests.csproj", "{032387F4-EEC9-455B-B4DF-865943130D86}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

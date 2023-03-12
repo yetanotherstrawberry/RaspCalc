@@ -21,6 +21,9 @@ This app supports both light and dark modes. The calculator will change its colo
 ### Decimal separator
 This project is culture-independent. It will use and show on the keyboard the decimal separator returned by the OS.
 
+### Snooze
+Click "Yes" when a message appears, to stop the alarm and set a new one for 5 minutes.
+
 ![Responsive design and error](/Screenshots/DarkResponsiveError.png)
 
 ### Errors

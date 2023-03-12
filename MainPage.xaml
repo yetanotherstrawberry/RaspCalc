@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:RaspCalc"
+             xmlns:viewModels="clr-namespace:RaspCalc.ViewModels"
+             xmlns:models="clr-namespace:RaspCalc.Models"
+             x:Class="RaspCalc.MainPage">
+    <ContentPage.BindingContext>
+        <viewModels:MainPageViewModel />
+    </ContentPage.BindingContext>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="3*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <Grid Grid.Row="0" Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="3*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <Entry Text="{Binding Memory}" IsReadOnly="True" Grid.Row="0" Grid.Column="0" Keyboard="Numeric" />
+            <ScrollView Orientation="Horizontal" Grid.Row="1" Grid.Column="0" x:Name="ScrollViewObject">
+                <Entry Text="{Binding Text}"
+                       Placeholder="0"
+                       FontSize="Header"
+                       HorizontalTextAlignment="End"
+                       IsReadOnly="True"
+                       Keyboard="Numeric" />
+            </ScrollView>
+        </Grid>
+
+        <Grid Grid.Row="1" Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <Button Grid.Row="0" Grid.Column="0" Text="x&#x00B2;" Command="{Binding RequestAction}" CommandParameter="{x:Static models:NumericAction.Square}" />
+            <Button Grid.Row="0" Grid.Column="1" Text="&#x221A;x" Command="{Binding RequestAction}" CommandParameter="{x:Static models:NumericAction.SquareRoot}" />
+            <Button Grid.Row="0" Grid.Column="2" Text="CE" Command="{Binding TextClear}" />
+            <Button Grid.Row="0" Grid.Column="3" Text="&#x232B;" Command="{Binding TextErase}" />
+
+            <Button Grid.Row="1" Grid.Column="0" Text="7" Command="{Binding KeyboardButton}" CommandParameter="7" />
+            <Button Grid.Row="1" Grid.Column="1" Text="8" Command="{Binding KeyboardButton}" CommandParameter="8" />
+            <Button Grid.Row="1" Grid.Column="2" Text="9" Command="{Binding KeyboardButton}" CommandParameter="9" />
+            <Button Grid.Row="1" Grid.Column="3" Text="+" Command="{Binding RequestMemory}" CommandParameter="{x:Static models:NumericAction.Sum}" />
+
+            <Button Grid.Row="2" Grid.Column="0" Text="4" Command="{Binding KeyboardButton}" CommandParameter="4" />
+            <Button Grid.Row="2" Grid.Column="1" Text="5" Command="{Binding KeyboardButton}" CommandParameter="5" />
+            <Button Grid.Row="2" Grid.Column="2" Text="6" Command="{Binding KeyboardButton}" CommandParameter="6" />
+            <Button Grid.Row="2" Grid.Column="3" Text="-" Command="{Binding RequestMemory}" CommandParameter="{x:Static models:NumericAction.Subtract}" />
+
+            <Button Grid.Row="3" Grid.Column="0" Text="1" Command="{Binding KeyboardButton}" CommandParameter="1" />
+            <Button Grid.Row="3" Grid.Column="1" Text="2" Command="{Binding KeyboardButton}" CommandParameter="2" />
+            <Button Grid.Row="3" Grid.Column="2" Text="3" Command="{Binding KeyboardButton}" CommandParameter="3" />
+            <Button Grid.Row="3" Grid.Column="3" Text="*" Command="{Binding RequestMemory}" CommandParameter="{x:Static models:NumericAction.Multiplication}" />
+
+            <Button Grid.Row="4" Grid.Column="0" Text="{Binding Separator}" Command="{Binding AddRestrictedChar}" CommandParameter="{Binding Separator}" />
+            <Button Grid.Row="4" Grid.Column="1" Text="0" Command="{Binding KeyboardButton}" CommandParameter="0" />
+            <Button Grid.Row="4" Grid.Column="2" Text="=" Command="{Binding RequestAction}" CommandParameter="{Binding CurrentAction}" />
+            <Button Grid.Row="4" Grid.Column="3" Text="/" Command="{Binding RequestMemory}" CommandParameter="{x:Static models:NumericAction.Division}" />
+
+        </Grid>
+    </Grid>
+</ContentPage>
